@@ -8,6 +8,7 @@ public class MataKuliah24 {
     public MataKuliah24(){
 
     }
+    
     public MataKuliah24 (String kode, String nama, int sks, int jumlahJam) {
     this.kode = kode;
     this.nama = nama;
@@ -38,3 +39,4 @@ public class MataKuliah24 {
             System.out.println("--------------------------\n");
     }
 }
+

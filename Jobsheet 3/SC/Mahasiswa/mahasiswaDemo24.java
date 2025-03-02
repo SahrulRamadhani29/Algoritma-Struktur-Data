@@ -4,6 +4,32 @@ class Mahasiswa24 {
     public String nim, nama, kelas;
     public float ipk;
 
+
+  // Constructor 1: Tanpa parameter (Default Constructor)
+  public Mahasiswa24() {
+    this.nim = "000000";
+    this.nama = "Unknown";
+    this.kelas = "X";
+    this.ipk = 0.0f;
+}
+
+// Constructor 2: Dengan parameter NIM dan Nama
+public Mahasiswa24(String nim, String nama) {
+    this.nim = nim;
+    this.nama = nama;
+    this.kelas = "X"; // Default kelas
+    this.ipk = 0.0f;  // Default IPK
+}
+
+// Constructor 3: Dengan parameter lengkap
+public Mahasiswa24(String nim, String nama, String kelas, float ipk) {
+    this.nim = nim;
+    this.nama = nama;
+    this.kelas = kelas;
+    this.ipk = ipk;
+}
+
+
 void cetakinfo () {
     System.out.println("\n===== Data Mahasiswa =====");
     System.out.println("NIM   = " + nim);
