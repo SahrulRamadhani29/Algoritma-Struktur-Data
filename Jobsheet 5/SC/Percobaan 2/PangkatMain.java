@@ -13,6 +13,7 @@ public class PangkatMain {
          int pangkat = input.nextInt();
          png[i] = new Pangkat(basis, pangkat);
       }
+      
     
          System.out.println("HASIL PANGKAT BRUTEFORCE:");
       for (Pangkat p : png) {
