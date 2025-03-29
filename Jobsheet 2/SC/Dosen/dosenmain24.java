@@ -1,5 +1,3 @@
-package Dosen;
-
 public class dosenmain24 {
     public static void main(String[] args) {
         dosen24 dos1 = new dosen24(); 
