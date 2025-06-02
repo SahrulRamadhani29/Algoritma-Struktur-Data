@@ -1,3 +1,5 @@
+import Temp.Node24;
+
 public class SingleLinkedList24 {
     Node24 head, tail;
 
