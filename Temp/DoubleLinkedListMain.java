@@ -24,38 +24,43 @@ public class DoubleLinkedListMain {
             System.out.println("\nMenu:");
             System.out.println("1. Tambah Data Mahasiswa di Awal");
             System.out.println("2. Tambah Data Mahasiswa di Akhir");
-            System.out.println("3. Hapus Data Mahasiswa di awal");
-            System.out.println("4. Hapus Data Mahasiswa di Akhir");
-            System.out.println("5. Tampilkan Data");
-            System.out.println("6. Cari Data Mahasiswa Berdasarkan NIM");
-            System.out.println("7. Keluar");
+            System.out.println("3. Tambah Data Mahasiswa setelah NIM tertentu");
+            System.out.println("4. Hapus Data Mahasiswa di awal");
+            System.out.println("5. Hapus Data Mahasiswa di Akhir");
+            System.out.println("6. Tampilkan Data");
+            System.out.println("7. Cari Data Mahasiswa Berdasarkan NIM");
+            System.out.println("8. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scan.nextInt();
             scan.nextLine();
 
             switch (pilihan) {
                 case 1 -> {
-                    mahasiswa24 mhs = inputMahasiswa(scan);
+                    Mahasiswa24 mhs = inputMahasiswa(scan);
                     list24.addFirst(mhs);
                 }
                 case 2 -> {
-                    mahasiswa24 mhs = inputMahasiswa(scan);
+                    Mahasiswa24 mhs = inputMahasiswa(scan);
                     list24.addLast(mhs);
                 }
-                /*case 3 -> {
-                    list24.removeFirst();
-                }
+                case 3 -> {
+                    System.out.println("Tambahkan Data setelah NIM :");
+                    String keyNim = scan.nextLine();
+                    Mahasiswa24 mhs = inputMahasiswa(scan);
+                    list24.insertAfter(keyNim, mhs);
+                 }
                 case 4 -> {
+                    list24.removeFirst();
+                } 
+                case 5 -> {
                     list24.removeLast();
-                }  */
-                case 5 -> list24.print();;
-                /*case 6 -> 
-                Cari dengan NIM
-              */
-                case 0 -> System.out.println("Keluar dari Program.");
+                }
+                case 6 -> list24.print();
+            
+                case 8 -> System.out.println("Keluar dari Program.");
                 default -> System.out.println("Pilihan Tidak Valid");
                 }
-                while ( Pilihan != 0); 
-            }
+            }    while ( pilihan != 0); 
+            
 }
 }

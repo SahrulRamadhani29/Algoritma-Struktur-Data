@@ -1,7 +1,7 @@
 public class DoubleLinkedList24 {
     
-    node24 head;
-    node24 tail;
+    Node24 head;
+    Node24 tail;
 
     public DoubleLinkedList24() {
         head = null;
@@ -12,8 +12,8 @@ public class DoubleLinkedList24 {
         return head == null;
     } 
 
-    public void addFirst(mahasiswa24 data) {
-        node24 newNode = new node24(data);
+    public void addFirst(Mahasiswa24 data) {
+        Node24 newNode = new Node24(data);
         if (isEmpty()) {
             head = tail = newNode;
         } else {
@@ -23,8 +23,8 @@ public class DoubleLinkedList24 {
         }
     }
 
-    public void addLast(mahasiswa24 data) {
-        node24 newNode = new node24(data);
+    public void addLast(Mahasiswa24 data) {
+        Node24 newNode = new Node24(data);
         if (isEmpty()) {
             head = tail = newNode;
         } else {
@@ -34,8 +34,8 @@ public class DoubleLinkedList24 {
         }
     }
 
-    public void insertAfter(String keyNim, mahasiswa24 data) {
-        node24 current = head;
+    public void insertAfter(String keyNim, Mahasiswa24 data) {
+        Node24 current = head;
         while (current != null && !current.data.nim.equals(keyNim)) {
             current = current.next;
         }
@@ -44,7 +44,7 @@ public class DoubleLinkedList24 {
             return;
         }
 
-        node24 newNode = new node24(data);
+        Node24 newNode = new Node24(data);
 
         if (current == tail) {
             current.next = newNode;
@@ -63,11 +63,45 @@ public class DoubleLinkedList24 {
     }
 
     public void print (){
-            node24 current = head;
+
+        if (isEmpty()) {
+            System.out.println("Warning: Data kosong, tidak ada mahasiswa yang tersimpan.");
+            return;
+        }
+            Node24 current = head;
             while (current != null) {
                 current.data.tampil();
                 current = current.next;
             }
         }
 
+    public void removeFirst() {
+        String nimDihapus = head.data.nim;
+        if (isEmpty()) {
+            System.out.println("Warning: Data kosong, tidak ada mahasiswa yang bisa dihapus.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+        System.out.println("Mahasiswa dengan NIM " + nimDihapus + " berhasil dihapus.");
+    }
+
+    void removeLast() {
+        String nimDihapus = tail.data.nim;
+        if (isEmpty()) {
+            System.out.println("Warning: Data kosong, tidak ada mahasiswa yang bisa dihapus.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
+        System.out.println("Mahasiswa dengan NIM " + nimDihapus + " berhasil dihapus.");
+    }
 }
